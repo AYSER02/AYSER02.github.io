@@ -1,11 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-
-interface BatteryManager {
-  level: number;
-  charging: boolean;
-  addEventListener: (type: string, listener: () => void) => void;
-  removeEventListener: (type: string, listener: () => void) => void;
-}
 import {
   Wifi,
   WifiOff,
@@ -43,6 +36,17 @@ const MenuBar: React.FC<MenuBarProps> = ({ switchWallpaper }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [isWallpaperSelectorOpen, setIsWallpaperSelectorOpen] = useState(false);
 
+  
+
+  const handleCloseWallpaperSelector = (): void => {
+    setIsWallpaperSelectorOpen(false);
+  };
+
+  const handleSelectWallpaper = (wallpaper: string): void => {
+    // Call the passed switchWallpaper function to change the wallpaper
+    switchWallpaper(wallpaper);
+    setIsWallpaperSelectorOpen(false); // Close the wallpaper selector after selection
+  };
   const drawerRef = useRef<HTMLDivElement>(null);
   const startY = useRef<number>(0);
   const currentY = useRef<number>(0);
@@ -56,23 +60,11 @@ const MenuBar: React.FC<MenuBarProps> = ({ switchWallpaper }) => {
   }, []);
 
   useEffect(() => {
-    const updateBatteryStatus = (battery: BatteryManager) => {
-      setBatteryLevel(Math.floor(battery.level * 100));
-    };
+    const batteryInterval = setInterval(() => {
+      setBatteryLevel((prev) => (prev > 10 ? prev - 1 : 100));
+    }, 5000);
 
-    (navigator as any).getBattery().then((battery: BatteryManager) => {
-      updateBatteryStatus(battery);
-
-      battery.addEventListener('levelchange', () => updateBatteryStatus(battery));
-      battery.addEventListener('chargingchange', () => updateBatteryStatus(battery));
-    });
-
-    return () => {
-      (navigator as any).getBattery().then((battery: BatteryManager) => {
-        battery.removeEventListener('levelchange', () => updateBatteryStatus(battery));
-        battery.removeEventListener('chargingchange', () => updateBatteryStatus(battery));
-      });
-    };
+    return () => clearInterval(batteryInterval);
   }, []);
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>): void => {
@@ -111,11 +103,6 @@ const MenuBar: React.FC<MenuBarProps> = ({ switchWallpaper }) => {
   const handleOpenWallpaperSelector = (): void => {
     handleDrawerClose();
     setIsWallpaperSelectorOpen(true);
-  };
-
-  const handleSelectWallpaper = (wallpaperSrc: string): void => {
-    switchWallpaper(wallpaperSrc);
-    setIsWallpaperSelectorOpen(false);
   };
   const handleCalendarClick = (): void => {
     setIsCalendarOpen(!isCalendarOpen);
@@ -262,7 +249,7 @@ const MenuBar: React.FC<MenuBarProps> = ({ switchWallpaper }) => {
       >
         <div className="p-4 space-y-4">
           <div className="flex items-center justify-between">
-            <span className="font-semibold">Ekaspreet Singh Atwal</span>
+            <span className="font-semibold">Ayser Ahmed Bijapur</span>
             <div className="flex items-center space-x-2">
               <LucideCopyright className="h-4 w-4" />
               <span>2025</span>
@@ -317,7 +304,7 @@ const MenuBar: React.FC<MenuBarProps> = ({ switchWallpaper }) => {
       {isWallpaperSelectorOpen && (
         <WallpaperSelector
           onSelectWallpaper={handleSelectWallpaper}
-          closeWindow={handleOpenWallpaperSelector}
+          closeWindow={handleCloseWallpaperSelector}
         />
       )}
     </>
