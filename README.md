@@ -37,12 +37,12 @@ Visit the live website:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/ekas-7/MAC-OS-Themed-Portfolio.git
+git clone https://github.com/AYSER02/AYSER02.github.io
 ```
 
 2. Navigate to the project directory:
 ```bash
-cd MAC-OS-Themed-Portfolio
+cd AYSER02.github.io
 ```
 
 3. Install dependencies:
@@ -66,43 +66,3 @@ The portfolio is optimized for various screen sizes:
 - Tablet (768px to 1023px)
 - Mobile (below 768px)
 
-## 🎨 Customization
-
-### Theme Colors
-Modify the theme colors in `tailwind.config.js`:
-```javascript
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#your-color',
-        secondary: '#your-color',
-        // Add custom colors
-      }
-    }
-  }
-}
-```
-
-### Layout
-Adjust the layout components in `components/layout/`
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-Made with ❤️ by EKaspreeet Singh Atwal
-=======
->>>>>>> fa6bd37cf4de46b4a516118c50269151041a410c
