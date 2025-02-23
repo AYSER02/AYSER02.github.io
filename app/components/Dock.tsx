@@ -1,8 +1,6 @@
 import { 
-  Music, 
   Code, 
   Globe, 
-  Terminal,
   User,
   Briefcase,
   Mail,
@@ -72,26 +70,6 @@ export default function Dock({ toggleWindow }: DockProps) {
 
         <DockItem label="Contact" onClick={() => toggleWindow('contact')}>
           <Mail className="w-5 h-5 sm:w-5 sm:h-5 text-gray-600/80 dark:text-white/80 
-            group-hover:text-gray-900 dark:group-hover:text-white" />
-        </DockItem>
-
-        <DockItem label="Music" onClick={() => toggleWindow('music-player')}>
-          <Music className="w-5 h-5 sm:w-5 sm:h-5 text-gray-600/80 dark:text-white/80 
-            group-hover:text-gray-900 dark:group-hover:text-white" />
-        </DockItem>
-
-        <DockItem label="VSCode" onClick={() => toggleWindow('vscode')}>
-          <Code className="w-5 h-5 sm:w-5 sm:h-5 text-gray-600/80 dark:text-white/80 
-            group-hover:text-gray-900 dark:group-hover:text-white" />
-        </DockItem>
-
-        <DockItem label="Browser" onClick={() => toggleWindow('browser')}>
-          <Globe className="w-5 h-5 sm:w-5 sm:h-5 text-gray-600/80 dark:text-white/80 
-            group-hover:text-gray-900 dark:group-hover:text-white" />
-        </DockItem>
-
-        <DockItem label="Terminal" onClick={() => toggleWindow('terminal')}>
-          <Terminal className="w-5 h-5 sm:w-5 sm:h-5 text-gray-600/80 dark:text-white/80 
             group-hover:text-gray-900 dark:group-hover:text-white" />
         </DockItem>
 

@@ -7,9 +7,7 @@ import MenuBar from "./components/MenuBar";
 import Window from "./components/Window";
 import ApplePreloader from "./components/ApplePreloader";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import VSCodeEditor from "./components/VSCodeEditor";
 import GeminiChat from "./components/BrowserWindow";
-import Terminal from "./components/Terminal";
 import ResumeWindow from "./components/ResumeWindow";
 import wallpaper3 from "@/public/wallpaper-white.jpg";
 import wallpaper2 from "@/public/wallpaper2.jpg";
@@ -20,7 +18,6 @@ import wallpaper7 from "@/public/wallpaper7.jpg";
 import wallpaper8 from "@/public/wallpaper8.jpg";
 import wallpaper9 from "@/public/wallpaper9.jpg";
 import wallpaper10 from "@/public/wallpaper10.jpg";
-import MusicPlayer from "./components/MusicPlayer";
 import ProfileCard from "./components/AboutMe";
 import ConnectWithMe from "./components/Social";
 import Projects from "./components/Project";
@@ -113,15 +110,6 @@ export default function Home() {
                 <ConnectWithMe />
               </Window>
             )}
-            {openWindows.includes("vscode") && (
-              <Window
-                id="vscode"
-                title="VS Code"
-                onClose={() => toggleWindow("vscode")}
-              >
-                <VSCodeEditor />
-              </Window>
-            )}
             {openWindows.includes("browser") && (
               <Window
                 id="browser"
@@ -129,24 +117,6 @@ export default function Home() {
                 onClose={() => toggleWindow("browser")}
               >
                 <GeminiChat />
-              </Window>
-            )}
-            {openWindows.includes("terminal") && (
-              <Window
-                id="terminal"
-                title="Terminal"
-                onClose={() => toggleWindow("terminal")}
-              >
-                <Terminal />
-              </Window>
-            )}
-            {openWindows.includes("music-player") && (
-              <Window
-                id="music-player"
-                title="Music Player"
-                onClose={() => toggleWindow("music-player")}
-              >
-                <MusicPlayer />
               </Window>
             )}
             {openWindows.includes("resume") && (
