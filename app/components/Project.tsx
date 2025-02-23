@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Github, ExternalLink } from 'lucide-react';
 import GitHubProjects from './OtherProject';
+import { FaGithub } from 'react-icons/fa';
 
 interface Project {
   title: string;
@@ -87,7 +87,7 @@ const Projects: React.FC = () => {
             rel="noopener noreferrer"
             className="flex items-center justify-center px-3 py-1.5 text-sm rounded-md bg-gray-700 text-white hover:bg-gray-800 transition-colors"
           >
-            <Github className="w-4 h-4 mr-1" />
+            <FaGithub className="w-4 h-4 mr-1" />
             <span>GitHub</span>
           </a>
         </div>

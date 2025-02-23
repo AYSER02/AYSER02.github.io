@@ -21,8 +21,6 @@ import wallpaper10 from "@/public/wallpaper10.jpg";
 import ProfileCard from "./components/AboutMe";
 import ConnectWithMe from "./components/Social";
 import Projects from "./components/Project";
-import GitHubProjects from "./components/OtherProject"; // Import the GitHubProjects component
-
 export default function Home() {
   const [openWindows, setOpenWindows] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);

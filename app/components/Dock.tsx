@@ -1,6 +1,4 @@
 import { 
-  Code, 
-  Globe, 
   User,
   Briefcase,
   Mail,
