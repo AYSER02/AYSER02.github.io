@@ -5,40 +5,29 @@ import GitHubProjects from './OtherProject';
 interface Project {
   title: string;
   description: string;
-  deployedUrl: string;
   githubUrl: string;
 }
 
 const initialProjects: Project[] = [
   {
-    title: "Blog It",
-    description: "This is a blogging application inspired by Medium. The project is built from scratch using a modern tech stack and deployed on Vercel and Cloudflare Workers.",
-    deployedUrl: "https://blog-7ytpfq9wi-ekasatwal7.vercel.app/",
-    githubUrl: "https://github.com/ekas-7/Blog-It",
+    title: "Basic Snake Game",
+    description: "This is a Basic Html, Css and JS based application. The project is the first project built from scratch using HTML CSS and JavaScript.",
+    githubUrl: "https://github.com/AYSER02/snake-game-online",
   },
   {
-    title: "Aurea",
-    description: "Access to quality healthcare is a widespread issue. While urban areas have better facilities, people in small towns often lack access to specialists, leaving skin conditions undiagnosed or improperly treated, which can lead to a dip in self-worth and potential health risks.",
-    deployedUrl: "https://noobz-1.onrender.com/",
-    githubUrl: "https://github.com/ekas-7/Aurea",
+    title: "Blockchain Based Polling System",
+    description: "We used blockchain technology to create a secure and transparent polling system. The project was developed using Ethereum smart contracts and React.js.",
+    githubUrl: "https://github.com/AYSER02/Decentralized-Polling-System",
   },
   {
-    title: "Chat-App",
-    description: "Chat-App is a real-time messaging application that allows users to communicate instantly with each other. It provides a platform for seamless text-based conversations in a user-friendly interface.",
-    deployedUrl: "https://github.com/ekas-7/Chat-App",
-    githubUrl: "https://github.com/ekas-7/Chat-App",
+    title: "Online-Chat",
+    description: "Online-Chat is a real-time messaging application that allows users to communicate instantly with each other. It provides a platform for seamless text-based conversations in a user-friendly interface.",
+    githubUrl: "https://github.com/AYSER02/Online-chat",
   },
   {
-    title: "npx-ekas",
-    description: "npx-ekas is a simple, yet powerful, personal CLI card built using Node.js. It serves as a digital business card that you can share quickly via the npx command.",
-    deployedUrl: "https://www.npmjs.com/package/ekas",
-    githubUrl: "https://github.com/ekas-7/npx-ekas",
-  },
-  {
-    title: "Drishti",
-    description: "Drishti is a software developed for a global psychological services startup to administer RIASEC and DISC tests",
-    deployedUrl: "https://drishti-dnro.vercel.app/",
-    githubUrl: "https://github.com/ekas-7/Drishti",
+    title: "Quiz-Card",
+    description: "Quiz-Card is an application that allows users to create, edit, and share flashcards for studying. It is built using Java.",
+    githubUrl: "https://github.com/AYSER02/Quiz-card",
   },
 ];
 
@@ -55,10 +44,14 @@ const Projects: React.FC = () => {
         // Simulate fetching additional projects
         const fetchedProjects: Project[] = [
           {
-            title: "Additional Project 1",
-            description: "A description for additional project 1.",
-            deployedUrl: "https://additionalproject1.example.com",
-            githubUrl: "https://github.com/username/additionalproject1",
+            title: "Ayurvwdic-Medicine",
+            description: " This project is based on the concept of Ayurvedic Medicine. The project is developed using React.js, Node.js, and MongoDB.",
+            githubUrl: "https://github.com/AYSER02/ayurvwdic-medicine",
+          },
+          {
+            title: "BIG-Data",
+            description: "This project is based on the concept of Big Data. The project is developed using Hadoop, Spark, and Scala.",
+            githubUrl: "https://github.com/AYSER02/Big-Data",
           },
         ];
         setTimeout(() => setAdditionalProjects(fetchedProjects), 1000); // Simulated delay
@@ -88,15 +81,6 @@ const Projects: React.FC = () => {
           {project.description}
         </p>
         <div className="flex gap-3">
-          <a
-            href={project.deployedUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center px-3 py-1.5 text-sm rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-colors"
-          >
-            <ExternalLink className="w-4 h-4 mr-1" />
-            <span>View Live</span>
-          </a>
           <a
             href={project.githubUrl}
             target="_blank"
@@ -128,7 +112,7 @@ const Projects: React.FC = () => {
         {!isLoading && !error && renderProjects(additionalProjects)}
       </div>
 
-      <GitHubProjects username="ekas-7" />
+      <GitHubProjects username="AYSER02" displayName="Ayser" />
     </div>
   );
 };

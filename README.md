@@ -23,7 +23,7 @@ A modern, sleek portfolio website built with Next.js, featuring a macOS-inspired
 
 ## 🚀 Live Demo
 
-Visit the live website: https://www.ekas.site/
+Visit the live website: 
 
 ## 🛠️ Technologies Used
 

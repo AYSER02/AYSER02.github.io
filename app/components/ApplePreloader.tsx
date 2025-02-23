@@ -50,43 +50,42 @@ const OSBootPreloader = () => {
   }
 
   return (
-    <div className="fixed inset-0 bg-black font-mono text-green-500 flex flex-col justify-center items-center z-50 overflow-hidden">
+    <div className="fixed inset-0 bg-black font-mono text-blue-500 flex flex-col justify-center items-center z-50 overflow-hidden">
       {/* Digital Rain as background */}
       <DigitalRain />
 
       <div className="w-full max-w-2xl px-8 relative z-10">
-  <div className="bg-black bg-opacity-70 p-6 rounded-lg shadow-lg">
-    <div className="mb-4 h-2 bg-green-900 rounded-full overflow-hidden">
-      <div
-        className="h-full bg-green-500 transition-all duration-300 ease-out"
-        style={{ width: `${progress}%` }}
-        role="progressbar"
-        aria-valuenow={progress}
-        aria-valuemin={0}
-        aria-valuemax={100}
-      ></div>
-    </div>
+        <div className="bg-black bg-opacity-70 p-6 rounded-lg shadow-lg">
+          <div className="mb-4 h-2 bg-blue-900 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-blue-500 transition-all duration-300 ease-out"
+              style={{ width: `${progress}%` }}
+              role="progressbar"
+              aria-valuenow={progress}
+              aria-valuemin={0}
+              aria-valuemax={100}
+            ></div>
+          </div>
 
-    {bootSteps.map((step, index) => (
-      <div key={index} className="mb-2 overflow-hidden whitespace-nowrap">
-        <span className="text-green-600">[SYSTEM]</span> {step}
-      </div>
-    ))}
+          {bootSteps.map((step, index) => (
+            <div key={index} className="mb-2 overflow-hidden whitespace-nowrap">
+              <span className="text-blue-600">[SYSTEM]</span> {step}
+            </div>
+          ))}
 
-    {!loading && (
-      <div className="mt-8 text-center">
-        <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 tracking-wider glitch">
-          EKASPREET SINGH ATWAL
+          {!loading && (
+            <div className="mt-8 text-center">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 tracking-wider glitch">
+                AYSER AHMED BIJAPUR
+              </div>
+              <div className="text-sm flex items-center justify-center gap-2">
+                <span className="h-2 w-2 bg-blue-500 rounded-full cursor-blink inline-block"></span>
+                <span>System loaded successfully</span>
+              </div>
+            </div>
+          )}
         </div>
-        <div className="text-sm flex items-center justify-center gap-2">
-          <span className="h-2 w-2 bg-green-500 rounded-full cursor-blink inline-block"></span>
-          <span>System loaded successfully</span>
-        </div>
       </div>
-    )}
-  </div>
-</div>
-
     </div>
   );
 };

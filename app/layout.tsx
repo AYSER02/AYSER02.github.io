@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ekas Portfolio",
+  title: "Ayser's Portfolio",
   description: "A digital masterpiece showcasing creativity, innovation, and expertise. Crafted with passion and precision for a unique online presence.",
 };
 

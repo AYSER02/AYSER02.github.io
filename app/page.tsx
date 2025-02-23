@@ -24,7 +24,7 @@ import MusicPlayer from "./components/MusicPlayer";
 import ProfileCard from "./components/AboutMe";
 import ConnectWithMe from "./components/Social";
 import Projects from "./components/Project";
-
+import GitHubProjects from "./components/OtherProject"; // Import the GitHubProjects component
 
 export default function Home() {
   const [openWindows, setOpenWindows] = useState<string[]>([]);

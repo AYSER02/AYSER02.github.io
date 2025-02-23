@@ -26,14 +26,14 @@ export const DigitalRain: React.FC = () => {
       ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = '#0f0';
+      ctx.fillStyle = '#00f';
       ctx.font = '15px monospace';
 
       for (let i = 0; i < drops.length; i++) {
         const text = String.fromCharCode(Math.random() * 128);
-        ctx.fillText(text, i * 20, drops[i] * 20);
+        ctx.fillText(text, drops[i] * 20, i * 20);
 
-        if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
+        if (drops[i] * 20 > canvas.width && Math.random() > 0.975) {
           drops[i] = 0;
         }
 
