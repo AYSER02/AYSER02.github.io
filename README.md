@@ -66,3 +66,4 @@ The portfolio is optimized for various screen sizes:
 - Tablet (768px to 1023px)
 - Mobile (below 768px)
 
+Here my published portfolio - https://ayser-portfolio.vercel.app/
