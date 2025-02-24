@@ -8,7 +8,7 @@ interface WindowProps {
   onClose: () => void;
 }
 
-export default function Window({ children, onClose }: WindowProps) {
+export default function Window({ id, title, children, onClose }: WindowProps) {
   const [position, setPosition] = useState({ x: 50, y: 50 });
   const [size, setSize] = useState({ width: 800, height: 600 });
   const [isDragging, setIsDragging] = useState(false);
@@ -115,7 +115,7 @@ export default function Window({ children, onClose }: WindowProps) {
     }
   };
 
-  const handleResizeMouseDown = (e: React.MouseEvent) => {
+  const handleResizeMouseDown = (e: React.MouseEvent, direction: string) => {
     const rect = windowRef.current!.getBoundingClientRect();
     setResizeOffset({
       x: e.clientX - rect.right,
@@ -173,7 +173,35 @@ export default function Window({ children, onClose }: WindowProps) {
       </div>
       <div
         className="absolute bottom-0 right-0 w-6 h-6 cursor-se-resize "
-        onMouseDown={handleResizeMouseDown}
+        onMouseDown={(e) => handleResizeMouseDown(e, "se")}
+      />
+      <div
+        className="absolute bottom-0 left-0 w-6 h-6 cursor-sw-resize"
+        onMouseDown={(e) => handleResizeMouseDown(e, "sw")}
+      />
+      <div
+        className="absolute top-0 right-0 w-6 h-6 cursor-ne-resize"
+        onMouseDown={(e) => handleResizeMouseDown(e, "ne")}
+      />
+      <div
+        className="absolute top-0 left-0 w-6 h-6 cursor-nw-resize"
+        onMouseDown={(e) => handleResizeMouseDown(e, "nw")}
+      />
+      <div
+        className="absolute top-0 left-1/2 w-full h-2 cursor-ns-resize"
+        onMouseDown={(e) => handleResizeMouseDown(e, "n")}
+      />
+      <div
+        className="absolute bottom-0 left-1/2 w-full h-2 cursor-ns-resize"
+        onMouseDown={(e) => handleResizeMouseDown(e, "s")}
+      />
+      <div
+        className="absolute top-1/2 left-0 w-2 h-full cursor-ew-resize"
+        onMouseDown={(e) => handleResizeMouseDown(e, "w")}
+      />
+      <div
+        className="absolute top-1/2 right-0 w-2 h-full cursor-ew-resize"
+        onMouseDown={(e) => handleResizeMouseDown(e, "e")}
       />
     </div>
   );
