@@ -115,7 +115,7 @@ export default function Window({ id, title, children, onClose }: WindowProps) {
     }
   };
 
-  const handleResizeMouseDown = (e: React.MouseEvent, direction: string) => {
+  const handleResizeMouseDown = (e: React.MouseEvent) => {
     const rect = windowRef.current!.getBoundingClientRect();
     setResizeOffset({
       x: e.clientX - rect.right,
@@ -127,13 +127,12 @@ export default function Window({ id, title, children, onClose }: WindowProps) {
   return (
     <div
       ref={windowRef}
-      className="absolute bg-white/25 dark:bg-black/25 backdrop-blur-xl rounded-xl shadow-2xl overflow-hidden border border-white/20 dark:border-white/10 transition-all duration-300 "
+      className="absolute bg-white/25 dark:bg-black/25 backdrop-blur-xl rounded-xl shadow-2xl overflow-hidden border border-white/20 dark:border-white/10 transition-all duration-300"
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
         width: `${size.width}px`,
         height: `${size.height}px`,
-      
         transition:
           isMaximized || isMinimized
             ? "width 0.3s ease, height 0.3s ease"
@@ -168,40 +167,12 @@ export default function Window({ id, title, children, onClose }: WindowProps) {
         </div>
       </div>
 
-      <div className="bg-white/50 dark:bg-black/50 backdrop-blur-md  h-[calc(100%-2rem)] overflow-auto text-gray-800 dark:text-gray-200 transition-colors duration-300">
+      <div className="bg-white/50 dark:bg-black/50 backdrop-blur-md h-[calc(100%-2rem)] overflow-auto text-gray-800 dark:text-gray-200 transition-colors duration-300">
         {children}
       </div>
       <div
-        className="absolute bottom-0 right-0 w-6 h-6 cursor-se-resize "
-        onMouseDown={(e) => handleResizeMouseDown(e, "se")}
-      />
-      <div
-        className="absolute bottom-0 left-0 w-6 h-6 cursor-sw-resize"
-        onMouseDown={(e) => handleResizeMouseDown(e, "sw")}
-      />
-      <div
-        className="absolute top-0 right-0 w-6 h-6 cursor-ne-resize"
-        onMouseDown={(e) => handleResizeMouseDown(e, "ne")}
-      />
-      <div
-        className="absolute top-0 left-0 w-6 h-6 cursor-nw-resize"
-        onMouseDown={(e) => handleResizeMouseDown(e, "nw")}
-      />
-      <div
-        className="absolute top-0 left-1/2 w-full h-2 cursor-ns-resize"
-        onMouseDown={(e) => handleResizeMouseDown(e, "n")}
-      />
-      <div
-        className="absolute bottom-0 left-1/2 w-full h-2 cursor-ns-resize"
-        onMouseDown={(e) => handleResizeMouseDown(e, "s")}
-      />
-      <div
-        className="absolute top-1/2 left-0 w-2 h-full cursor-ew-resize"
-        onMouseDown={(e) => handleResizeMouseDown(e, "w")}
-      />
-      <div
-        className="absolute top-1/2 right-0 w-2 h-full cursor-ew-resize"
-        onMouseDown={(e) => handleResizeMouseDown(e, "e")}
+        className="absolute bottom-0 right-0 w-6 h-6 cursor-se-resize"
+        onMouseDown={handleResizeMouseDown}
       />
     </div>
   );
