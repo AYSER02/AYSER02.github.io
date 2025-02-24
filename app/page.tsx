@@ -22,7 +22,7 @@ import ProfileCard from "./components/AboutMe";
 import ConnectWithMe from "./components/Social";
 import Projects from "./components/Project";
 export default function Home() {
-  const [openWindows, setOpenWindows] = useState<string[]>([]);
+  const [openWindows, setOpenWindows] = useState<string[]>(["about"]); // Open "About Me" window by default
   const [isLoading, setIsLoading] = useState(true);
   const [wallpaper1, setWallpaper] = useState(wallpaper); // Default wallpaper
 
